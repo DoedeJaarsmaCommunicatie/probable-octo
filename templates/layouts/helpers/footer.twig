@@ -1,0 +1,18 @@
+<section class="bg-secondary text-white py-8">
+    <div class="container mx-auto">
+        <h3 class="newsletter-title block mb-8">
+            {{ theme.theme_mod('newsletter-title', 'Meld u aan voor de nieuwsbrief, dan houden we u op de hoogte.') }}
+        </h3>
+
+        <section>
+            {% filter shortcodes %}
+                [ninja_form id=1]
+            {% endfilter %}
+        </section>
+    </div>
+</section>
+<footer class="bg-secondary border-t-2 border-white flex justify-center py-4 text-white">
+    {% for item in footerMenu.items %}
+        <a href="{{ item.link }}" title="{{ item.title }}" target="{{ item.target }}">{{ item.title }}</a><span class="mx-2">|</span>
+    {% endfor %} {{ theme.theme_mod('footer-after-menu-text', 'een project van wonenoptetterode.amsterdam') }}
+</footer>

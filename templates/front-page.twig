@@ -1,0 +1,22 @@
+{% extends 'templates/layouts/base.twig' %}
+
+{% block content %}
+    <header class="hero-image__wrapper">
+        <picture class="hero-image__pic">
+            <img src="{{ post.thumbnail('lazy-thumbnail') }}" data-djc-lazy="{{ post.thumbnail.src }}" alt="{{ post.thumbnail.alt }}" title="{{ post.thumbnail.title }}">
+        </picture>
+    </header>
+    <main id="app">
+        <section class="container mx-auto">
+            {% include 'templates/parts/content-page.twig' with { title: post.meta('content_rij_1_title'), img: post.meta('content_rij_1_afbeelding').src, post_content: post.meta('content_rij_1_content') } only %}
+        </section>
+        <div class="bg-grey">
+            <section class="container mx-auto" data-direction="reverse">
+                {% include 'templates/parts/content-page-left.twig' with { title: post.meta('content_rij_2_title'), img: post.meta('content_rij_2_afbeelding').src, post_content: post.meta('content_rij_2_content'), image_background: 'secondary' } only %}
+            </section>
+            <div class="container mx-auto">
+                {% include 'templates/parts/content-page.twig' with { title: post.meta('content_rij_3_title'), img: post.meta('content_rij_3_afbeelding').src, post_content: post.meta('content_rij_3_content') } only %}
+            </div>
+        </div>
+    </main>
+{% endblock %}

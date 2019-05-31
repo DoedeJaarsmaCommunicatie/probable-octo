@@ -1,0 +1,11 @@
+<div class="md:flex py-24">
+    <div class="md:w-1/2">
+        <image-shadow background="{{ image_background?? 'primary' }}" left img="{{ img?? 'http://tetterode.local/wp-content/uploads/2019/05/91cc9be72f53629576a024fd7fdebd76@2x.png' }}"></image-shadow>
+    </div>
+    <div class="md:w-1/2 md:ml-8">
+        <title-striped :classes="['mb-4']">
+            {{ title?? '' }}
+        </title-striped>
+        {{ post_content|wpautop }}
+    </div>
+</div>

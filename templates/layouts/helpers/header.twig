@@ -1,0 +1,14 @@
+<header class="py-6">
+    <div class="container mx-auto">
+        <div class="md:flex">
+            <img class="logo" src="{{ Image(theme.theme_mod('custom_logo')).src }}" alt="{{ site.title }}">
+            <nav class="ml-auto mt-auto">
+                {% for item in primaryMenu.items %}
+                    <a href="{{ item.link }}" class="{{ item.classes|join(' ') }}">
+                        {{ item.title }}
+                    </a>
+                {% endfor %}
+            </nav>
+        </div>
+    </div>
+</header>
