@@ -15,3 +15,30 @@
     }
 }
 
+.navMenu {
+    @apply ml-auto mt-auto;
+    display: none;
+
+    &.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: theme('colors.white.default');
+        padding: 10px;
+        text-align: center;
+        box-shadow: 0 6px 6px color(theme('colors.black.default') a(16%));
+    }
+
+    & .menu-item {
+        margin: 0 0 10px;
+    }
+}
+
+@screen lg {
+    .navMenu {
+        @apply block;
+    }
+}

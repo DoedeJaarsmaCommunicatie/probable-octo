@@ -79,7 +79,10 @@
                     box-shadow: -#{$shadowOffset}px #{$shadowOffset}px $color
                 }
             }
-
+        }
+        
+        @media screen and (max-width: 414px) {
+            margin-bottom: 25px;
         }
     }
 

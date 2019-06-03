@@ -37,4 +37,4 @@ mix.postCss('assets/styles/main.css', 'dist/styles/main.css', [
         ? [purger]
         : []
 ])
-    .js('assets/vue/app.js', 'dist/scripts/elements.vue.js')
+    .js('assets/vue/app.js', 'dist/scripts/elements.vue.js');

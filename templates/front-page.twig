@@ -7,14 +7,14 @@
         </picture>
     </header>
     <main id="app">
-        <section class="container mx-auto">
+        <section class="container mx-auto px-4 lg:px-0">
             {% include 'templates/parts/content-page.twig' with { title: post.meta('content_rij_1_title'), img: Image(post.meta('content_rij_1_afbeelding')).src, post_content: post.meta('content_rij_1_content') } only %}
         </section>
         <div class="bg-grey">
-            <section class="container mx-auto" data-direction="reverse">
+            <section class="container mx-auto px-4 lg:px-0" data-direction="reverse">
                 {% include 'templates/parts/content-page-left.twig' with { title: post.meta('content_rij_2_title'), img: Image(post.meta('content_rij_2_afbeelding')).src, post_content: post.meta('content_rij_2_content'), image_background: 'secondary' } only %}
             </section>
-            <div class="container mx-auto">
+            <div class="container mx-auto px-4 lg:px-0">
                 {% include 'templates/parts/content-page.twig' with { title: post.meta('content_rij_3_title'), img: Image(post.meta('content_rij_3_afbeelding')).src, post_content: post.meta('content_rij_3_content') } only %}
             </div>
         </div>

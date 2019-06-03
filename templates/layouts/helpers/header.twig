@@ -1,8 +1,9 @@
-<header class="py-6">
-    <div class="container mx-auto">
-        <div class="md:flex">
+<header class="py-6 relative">
+    <div class="container mx-auto px-4 lg:px-0">
+        <div class="flex">
             <img class="logo" src="{{ Image(theme.theme_mod('custom_logo')).src }}" alt="{{ site.title }}">
-            <nav class="ml-auto mt-auto">
+            <button data-opens="menu" id="menu-opener" class="lg:hidden ml-auto"><i class="fas fa-bars"></i></button>
+            <nav class="navMenu" id="nav-menu" data-controlledby="#menu-opener">
                 {% for item in primaryMenu.items %}
                     <a href="{{ item.link }}" class="{{ item.classes|join(' ') }}">
                         {{ item.title }}
@@ -12,3 +13,9 @@
         </div>
     </div>
 </header>
+
+<script>
+    document.getElementById('menu-opener').addEventListener('click', function() {
+      document.getElementById('nav-menu').classList.toggle('active');
+    })
+</script>
