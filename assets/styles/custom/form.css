@@ -1,0 +1,45 @@
+nf-fields-wrap {
+    display: grid;
+    grid-template-areas:
+                    "checkboxes checkboxes input-voornaam input-voornaam"
+                    "checkboxes checkboxes input-achternaam input-achternaam"
+                    "checkboxes checkboxes input-email input-email"
+                    ". . button button";
+    grid-template-columns: 25% 25% 25% 25%;
+
+    & nf-field:nth-of-type(1) {
+        grid-area: checkboxes;
+    }
+
+    & nf-field:nth-of-type(2) {
+        grid-area: input-voornaam;
+    }
+
+    & nf-field:nth-of-type(3) {
+        grid-area: input-achternaam;
+    }
+
+    & nf-field:nth-of-type(4) {
+        grid-area: input-email;
+    }
+
+    & nf-field:nth-of-type(5) {
+        grid-area: button;
+        text-align: center;
+    }
+}
+
+.nf-form-fields-required {
+    display: none;
+}
+
+.nf-form-content  {
+    & .ninja-forms-field {
+        padding: 14px;
+        color: theme('colors.black.default');
+    }
+}
+
+.newsletter-title {
+    @apply text-2xl;
+}

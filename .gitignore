@@ -1,5 +1,4 @@
 .distignore
 node_modules/
-assets/
 .git/
 .idea
