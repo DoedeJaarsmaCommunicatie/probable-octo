@@ -39,7 +39,15 @@ nf-fields-wrap {
         color: theme('colors.black.default');
     }
 }
-
+.nf-field-element {
+    & ul {
+        & li {
+            &::before {
+                content: none;
+            }
+        }
+    }
+}
 .newsletter-title {
     @apply text-2xl;
 }

@@ -14,7 +14,7 @@
                     row.image_left ? 'templates/parts/content-page-left.twig' : 'templates/parts/content-page.twig'
                     with {
                     title: row.title,
-                    img: row.image? row.image.src : '//via.placeholder.com/800x500',
+                    img: row.image? Image(row.image).src : '//via.placeholder.com/800x500',
                     post_content: row.content,
                     image_background: row.secondary_background ? 'secondary' : 'primary'
                 } only

@@ -13,8 +13,8 @@
 </section>
 <footer class="footer">
     {% for item in footerMenu.items %}
-        <a href="{{ item.link }}" title="{{ item.title }}" target="{{ item.target }}">{{ item.title }}</a><span class="mx-2 hidden lg:inline">|</span>
-    {% endfor %} {{ theme.theme_mod('footer-after-menu-text', 'een project van wonenoptetterode.amsterdam') }}
+        <a href="{{ item.link }}" title="{{ item.title }}" target="{{ item.target }}" style="text-align: center;">{{ item.title }}</a>
+    {% endfor %}
 </footer>
 
 <script src="https://kit.fontawesome.com/5c93836f5f.js"></script>
