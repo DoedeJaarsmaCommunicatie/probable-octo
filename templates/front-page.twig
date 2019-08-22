@@ -7,16 +7,20 @@
         </picture>
     </header>
     <main id="app">
-        <section class="container mx-auto px-4 lg:px-0">
-            {% include 'templates/parts/content-page.twig' with { title: post.meta('content_rij_1_title'), img: Image(post.meta('content_rij_1_afbeelding')).src, post_content: post.meta('content_rij_1_content') } only %}
-        </section>
-        <div class="bg-grey">
-            <section class="container mx-auto px-4 lg:px-0" data-direction="reverse">
-                {% include 'templates/parts/content-page-left.twig' with { title: post.meta('content_rij_2_title'), img: Image(post.meta('content_rij_2_afbeelding')).src, post_content: post.meta('content_rij_2_content'), image_background: 'secondary' } only %}
-            </section>
+        {% for row in post.get_field('layout') %}
+            {% if row.gray_background %}<section class="bg-grey">{% endif %}
             <div class="container mx-auto px-4 lg:px-0">
-                {% include 'templates/parts/content-page.twig' with { title: post.meta('content_rij_3_title'), img: Image(post.meta('content_rij_3_afbeelding')).src, post_content: post.meta('content_rij_3_content') } only %}
+                {% include
+                    row.image_left ? 'templates/parts/content-page-left.twig' : 'templates/parts/content-page.twig'
+                    with {
+                    title: row.title,
+                    img: row.image? row.image.src : '//via.placeholder.com/800x500',
+                    post_content: row.content,
+                    image_background: row.secondary_background ? 'secondary' : 'primary'
+                } only
+                %}
             </div>
-        </div>
+            {% if row.gray_background %}</section>{% endif %}
+        {% endfor %}
     </main>
 {% endblock %}

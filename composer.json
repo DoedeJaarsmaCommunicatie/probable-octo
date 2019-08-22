@@ -3,7 +3,8 @@
         "php": "^7.2",
         "timber/timber": "^1.9",
         "aristath/kirki": "^3.0",
-        "yahnis-elsts/plugin-update-checker": "^4.6"
+        "yahnis-elsts/plugin-update-checker": "^4.6",
+        "htmlburger/carbon-fields": "^3"
     },
     "autoload": {
         "psr-4": {

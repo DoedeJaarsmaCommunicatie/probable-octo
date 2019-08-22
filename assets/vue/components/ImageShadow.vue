@@ -50,7 +50,7 @@
     }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
     $colors: (
         'primary': #FF6700,
         'secondary': #0092A5

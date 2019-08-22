@@ -1,4 +1,4 @@
-let mix = require('laravel-mix');
+const mix = require('laravel-mix');
 
 /*
  |--------------------------------------------------------------------------
@@ -23,8 +23,12 @@ const purger = require('@fullhuman/postcss-purgecss')({
     whitelist: [
         'menu-item',
         'logo'
+    ],
+
+    whitelistPatterns: [
+        /data-v-(.*)/
     ]
-})
+});
 
 mix.postCss('assets/styles/main.css', 'dist/styles/main.css', [
     require('postcss-import'),
@@ -33,8 +37,18 @@ mix.postCss('assets/styles/main.css', 'dist/styles/main.css', [
     require('postcss-nested'),
     require('postcss-pixels-to-rem'),
     require('postcss-preset-env')({stage: 1}),
-    ...(process.env.NODE_ENV === 'production')
-        ? [purger]
-        : []
+    ...(process.env.NODE_ENV === 'production') ? [] : []
 ])
-    .js('assets/vue/app.js', 'dist/scripts/elements.vue.js');
+    .js('assets/vue/app.js', 'dist/scripts/elements.vue.js')
+    .options({
+        extractVueStyles: true,
+        postCss: [
+            require('postcss-import'),
+            require('tailwindcss'),
+            require('postcss-color-function'),
+            require('postcss-nested'),
+            require('postcss-pixels-to-rem'),
+            require('postcss-preset-env')({stage: 1}),
+            ...(process.env.NODE_ENV === 'production') ? [] : []
+        ]
+    });

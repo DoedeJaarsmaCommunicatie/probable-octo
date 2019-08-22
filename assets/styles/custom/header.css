@@ -42,3 +42,12 @@
         @apply block;
     }
 }
+
+@media screen and (max-width: 768px) {
+    @supports (object-fit: cover) {
+        .hero-image__pic img {
+            height: 500px;
+            object-fit: cover;
+        }
+    }
+}

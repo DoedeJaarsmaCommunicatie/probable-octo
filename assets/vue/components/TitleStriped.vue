@@ -44,7 +44,7 @@
     }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
     $colors: (
         'primary': #FF6700,
         'secondary': #0092A5
@@ -55,7 +55,11 @@
     
     @for $i from 1 through 6 {
         h#{$i} {
-            font-size: $fontStart - $i * $fontDelta;
+            font-size: $fontStart - $i * $fontDelta * 1.5;
+            
+            @media screen and (min-width: 768px) {
+                font-size: $fontStart - $i * $fontDelta;
+            }
         }
     }
     
