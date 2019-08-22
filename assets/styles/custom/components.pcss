@@ -1,0 +1,29 @@
+.button {
+    padding: 6px 14px;
+    cursor: pointer;
+
+    &.button--primary {
+        background: theme('colors.primary.default');
+        color: theme('colors.white.default');
+
+        &:hover {
+            background: color(theme('colors.primary.default') shade(20%));
+        }
+    }
+}
+
+ul {
+    position: relative;
+    margin-left: 0.5rem;
+    padding-left: 0.5rem;
+
+    & li {
+      position: relative;
+        &::before {
+            position: absolute;
+            left: -0.5rem;
+            content: '-';
+            color: theme('colors.primary.default');
+         }
+    }
+}
